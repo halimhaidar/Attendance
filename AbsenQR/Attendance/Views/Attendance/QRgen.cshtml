@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Attendance";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+
+<div id="content">
+    <div class="container-fluid ">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h1 class="h3 mb-2 font-weight-bold text-white">QR Code</h1>
+            </div>
+            <div class="card-body text-dark font-weight-bold">
+                <div class="row justify-content-center">
+                    <div id="qrcode"></div>                    
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
+    <script src="~/js/QRgen.js"></script>
+        }
+

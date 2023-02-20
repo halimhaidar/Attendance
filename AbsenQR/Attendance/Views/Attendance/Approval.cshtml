@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Approval";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<!-- Main Content -->
+<div id="content">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        
+
+
+        <!-- Modal -->
+        <div class="modal fade " id="ApprovalModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="userModalLabel">New User</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="idCheck" placeholder="" readonly="">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="checkIn">Check In</label>
+                                    <input required="" type="time" class="form-control" id="checkIn">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="checkOut">Check Out</label>
+                                    <input required="" type="time" class="form-control" id="checkOut">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="reason">Reason</label>
+                                    <input required="" type="text" class="form-control" id="reason" placeholder="Enter Reason">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" id="buttonSubmit" onclick="Revision()">Revisi</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DataTales  -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                @*<button id="addButton" type="button" class="btn btn-primary" onclick="select();" data-toggle="modal" data-target="#checkModal">Add Data User</button>*@
+                <h1 class="h3 mb-2 font-weight-bold text-white">Approval Revision Attendance</h1>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive text-nowrap">
+                    <table class="table table-bordered" id="tbApproval" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>NIK</th>
+                                <th>NAME</th>
+                                <th>DEPARTMENT</th>
+                                <th>DATE</th>
+                                <th>CHECK IN</th>
+                                <th>CHECK OUT</th>
+                                <th>REASON</th>
+                                <th>ACTION</th>                                
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+@section Scripts {
+    <script src="~/js/ApprovalScript.js"></script>
+}
+
+

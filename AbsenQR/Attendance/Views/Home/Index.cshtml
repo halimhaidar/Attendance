@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row mt-5">
+
+    <div class="col-sm">
+        <div class="row">
+            <a href="https://time.is/Jakarta" id="time_is_link" rel="nofollow" style="font-family: Arial; font-size: 36px; color: #059299;">Time in Jakarta:</a>
+            <span id="Jakarta_z41c" style="font-family:Arial; font-size: 35px; color: #192850;" ></span>
+        </div>
+
+        <div class="row mt-5">
+            <form>
+                <div class="form-group">
+                    <label for="nik" class="font-weight-bold">NIK</label>
+                    <input type="text" class="form-control" id="nik" aria-describedby="nikHelp" placeholder="Enter NIK">
+                    <small id="nikHelp" class="form-text text-muted">Enter Your Correct NIK</small>
+                </div>
+                <div class="form-group">
+                    <button id="btnAttendance" onclick="Attendance()" type="button" class="btn btn-info">Present</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div id="reader" width="500px"></div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-dark" id="loginModalLabel">Login </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" >
+                <form onsubmit="false">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button id="loginBtn" type="button" class="btn btn-info" onclick="Login()">Login</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // handle the scanned code as you like, for example:
+            console.log(`Code matched = ${decodedText}`, decodedResult);
+            $("#nik").val(decodedText);
+            $("#btnAttendance").click();
+
+        }
+
+        function onScanFailure(error) {
+            // handle scan failure, usually better to ignore and keep scanning.
+            // for example:
+            console.warn(`Code scan error = ${error}`);
+
+        }
+
+        let html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader",
+            { fps: 1, qrbox: { width: 500, height: 500 } },
+            verbose = false);
+        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    </script>
+    <script src="//widget.time.is/en.js"></script>
+    <script>
+        time_is_widget.init({ Jakarta_z41c: { template: "TIME<br>DATE", date_format: "dayname, monthname dnum, year" } });
+    </script>
+    <script src="~/js/site.js"></script>
+}

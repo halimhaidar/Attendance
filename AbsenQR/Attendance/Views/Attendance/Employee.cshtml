@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewData["Title"] = "Employee";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+
+
+<!-- Main Content -->
+<div id="content">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        
+
+
+        <!-- Modal -->
+        <div class="modal fade " id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-dark" id="userModalLabel">New User</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>                            
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="idRole" placeholder="" readonly="">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="idDepartment" placeholder="" readonly="">
+                                <input  type="hidden" class="form-control" id="nik" placeholder="Enter Nik">
+                            </div>
+                            <div class="form-row">                                
+                                <div class="form-group col-md-6">
+                                    <label for="name">Name</label>
+                                    <input required="" type="text" class="form-control" id="name" placeholder="Enter Name">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone</label>
+                                    <input required="" type="text" class="form-control" id="phone" placeholder="Enter Phone">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="email">Email</label>
+                                    <input required="" type="text" class="form-control" id="email" placeholder="Enter Email">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="gender">Gender</label>
+                                    <select required="" id="gender" class="form-control">
+                                        <option value="" disabled selected>Choose Gender</option>
+                                        <option value="0"  >Man</option>
+                                        <option value="1"  >Women</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="birthDate">Birth Date</label>
+                                    <input required="" type="date" class="form-control" id="birthDate" placeholder=" Phone">
+                                </div>
+
+                            </div>
+                            <div id="uspw" class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="username">Username</label>
+                                    <input required="" type="text" class="form-control" id="username" placeholder="Enter Username">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="password">Password</label>
+                                    <input required="" type="text" class="form-control" id="password" placeholder="Enter Password">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                @*<div class="form-group col-md-6">
+                                    <label for="role">Role</label>
+                                    <select required="" id="role" class="form-control">
+                                        <option value="" disabled selected>Choose Role</option>
+                                    </select>
+                                </div>*@
+                                <div class="form-group col-md-12">
+                                    <label for="department">Department</label>
+                                    <select required="" id="department" class="form-control">
+                                        <option value="" disabled selected>Choose Department</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="address">Address</label>
+                                    <input required="" type="text" class="form-control" id="address" placeholder="Enter Address">
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="buttonSubmit" onclick="Save()">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DataTales  -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <div class="row">
+                    <div class="my-auto ml-2">
+                        <h1 class="h3 mb-2 font-weight-bold text-white">Management User</h1>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="addButton" type="button" style="color: aliceblue; background-color: #059299;" class="btn btn" onclick="select();" data-toggle="modal" data-target="#userModal"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="card-body">
+                <div class="table-responsive text-nowrap">
+                    <table class="table table-bordered" id="tbEmployee" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>NIK</th>
+                                <th>NAME</th>
+                                <th>DEPARTMENT</th>
+                                <th>ROLE</th>
+                                <th>EMAIL</th>
+                                <th>PHONE</th>
+                                <th>GENDER</th>
+                                <th>ADDRESS</th>
+                                <th>BIRTH DATE</th>
+                                <th>USERNAME</th>                                
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+@section Scripts {
+    <script src="~/js/EmployeeScript.js"></script>
+}

@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewData["Title"] = "AttHistory";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<div id="content">
+    <div class="container-fluid">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h1 class="h3 mb-2 font-weight-bold text-white">Profile</h1>
+            </div>
+            <div class="card-body text-dark font-weight-bold">
+                <form>
+                <div class="row">                    
+                    <div class="col-lg-6 ">                        
+                        <div class="form-group row justify-content-center">
+                            <label for="nik" class="col-4 col-form-label">NIK</label>
+                            <div class="col-8">
+                                <input id="nik" name="nik" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>                                                  
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="name" class="col-4 col-form-label">Name</label>
+                            <div class="col-8">
+                                <input id="name" name="name" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="dept" class="col-4 col-form-label">Department</label>
+                            <div class="col-8">
+                                <input id="dept" name="dept" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="role" class="col-4 col-form-label">Role</label>
+                            <div class="col-8">
+                                <input id="role" name="role" placeholder="" class="form-control here"  type="text" disabled>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="gender" class="col-4 col-form-label">Gender</label>
+                            <div class="col-8">
+                                <input id="gender" name="gender" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="birth" class="col-4 col-form-label">Birth Date</label>
+                            <div class="col-8">
+                                <input id="birth" name="birth" placeholder="" class="form-control here"  type="text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="address" class="col-4 col-form-label">Address</label>
+                            <div class="col-8">
+                                <input id="address" name="address" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="phone" class="col-4 col-form-label">Phone</label>
+                            <div class="col-8">
+                                <input id="phone" name="phone" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="username" class="col-4 col-form-label">Username</label>
+                            <div class="col-8">
+                                <input id="username" name="username" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="email" class="col-4 col-form-label">Email</label>
+                            <div class="col-8">
+                                <input id="email" name="email" placeholder="" class="form-control here" type="text" disabled>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group row justify-content-center">
+                            <label for="password" class="col-4 col-form-label">Password</label>
+                            <div class="col-6">
+                                <input id="password" placeholder="Change Default Passwod" class="form-control here" type="text" >
+                            </div>
+                            <div class="col-2">
+                                <button  onclick="ChangePw()" class="btn btn-warning">Change</button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script src="~/js/ProfileScript.js"></script>
+}
